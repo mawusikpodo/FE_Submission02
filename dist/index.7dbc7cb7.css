@@ -1,0 +1,41 @@
+body {
+  --nav-width: 200px;
+  margin: 0 0 0 var(--nav-width);
+  background: #e2e2e2;
+  font-family: Quicksand, sans-serif;
+  font-size: 18px;
+}
+
+.nav {
+  width: var(--nav-width);
+  height: 100vh;
+  border-right: 1px solid #000;
+  padding-top: 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav__link {
+  cursor: pointer;
+  padding: 12px 18px;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+}
+
+.nav__link:hover {
+  background: #ffffff0d;
+}
+
+#app {
+  margin: 2em;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+a {
+  color: #222;
+}
+
+/*# sourceMappingURL=index.7dbc7cb7.css.map */

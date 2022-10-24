@@ -1,7 +1,7 @@
 // ---------- CHARTS ----------
 
 // BAR CHART
-export default barChartOptions = {
+var barChartOptions = {
     series: [{
         data: [10, 8, 6, 4, 2]
     }],
@@ -42,8 +42,9 @@ export default barChartOptions = {
         }
     }
 };
-
-let barChart = new ApexCharts(document.getElementById("#chart"), barChartOptions);
+var barChart = new ApexCharts(document.querySelector("#chart"), barChartOptions);
 barChart.render();
+
+
 
 

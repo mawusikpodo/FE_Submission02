@@ -594,6 +594,36 @@ exports.default = barChartOptions = {
 let barChart = new ApexCharts(document.getElementById("#chart"), barChartOptions);
 barChart.render();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["k11IE","3fZ27"], "3fZ27", "parcelRequire8de0")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}]},["k11IE","3fZ27"], "3fZ27", "parcelRequire8de0")
 
 //# sourceMappingURL=index.57b2e1e4.js.map

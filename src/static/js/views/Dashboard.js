@@ -85,9 +85,7 @@ export default class extends AbstractView {
                 </tr>
             </tbody>
             </table>
-        </main>
-        
-
+        </main>    
         `;
     }
 }

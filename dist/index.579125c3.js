@@ -31,8 +31,8 @@ function loadDashboard() {
             const status = xhttp.status;
             if (status === 0 || status >= 200 && status < 400) {
                 console.log(objects);
-                document.getElementById("currentsales").innerHTML = `$${objects.dashboard.sales_over_time_week[1].total}${" "}/${" "}${objects.dashboard.sales_over_time_week[1].orders}  orders`;
-                document.getElementById("lastweeksales").innerHTML = `$${objects.dashboard.sales_over_time_week[2].total}${" "} /${" "}${objects.dashboard.sales_over_time_week[2].orders}  orders`;
+                document.getElementById("currentsales").innerText = `$${objects.dashboard.sales_over_time_week[1].total}${" "}/${" "}${objects.dashboard.sales_over_time_week[1].orders}  orders`;
+                document.getElementById("lastweeksales").innerText = `$${objects.dashboard.sales_over_time_week[2].total}${" "} /${" "}${objects.dashboard.sales_over_time_week[2].orders}  orders`;
                 document.getElementById("lastmonthsales").innerHTML = `$${objects.dashboard.sales_over_time_week[3].total}${" "}/${" "}${objects.dashboard.sales_over_time_week[3].orders} orders`;
             }
         }

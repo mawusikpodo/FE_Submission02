@@ -679,9 +679,7 @@ exports.default = class extends (0, _abstractViewJsDefault.default) {
                 </tr>
             </tbody>
             </table>
-        </main>
-        
-
+        </main>    
         `;
     }
 };

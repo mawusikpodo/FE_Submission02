@@ -1,14 +1,11 @@
 {
   "name": "candyshop",
-  "source": "src/index.html",
+  "source": "index.html",
   "scripts": {
     "start": "parcel",
     "build": "parcel build"
   },
   "devDependencies": {
     "parcel": "latest"
-  },
-  "dependencies": {
-    "apexcharts": "^3.36.0"
   }
 }

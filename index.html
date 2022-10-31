@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+
+            <ul class="sidebar-list">
+                <img class="col" src="./Freddys_Logo.svg" alt="" height="100">
+                <li class="sidebar-list-item">
+                <a href="index.html" style="text-decoration:none">Dashboard</a> 
+                </li>
+                <li class="sidebar-list-item">
+                    <a  href="orders.html" style="text-decoration:none">Orders</a> 
+                </li>
+                <li class="sidebar-list-item" onclick="logout()">
+                    <span class="material-icons-outlined"></span> Logout
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+            <div class="main-title">
+                <p class="font-weight-bold">DASHBOARD</p>
+            </div>
+
+            <div class="main-cards">
+
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">Today</p>
+                    </div>
+                    <span id="currentsales" class="text-primary font-weight-bold">Loading...</span>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary"> Last Week</p>
+                    </div>
+                    <span id="lastweeksales" class="text-primary font-weight-bold">Loading...</span>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">Last Month</p>
+                    </div>
+                    <span id="lastmonthsales" class="text-primary font-weight-bold">Loading...</span>
+                </div>
+
+            </div>
+
+            <div class="main-title">
+                <p class="font-weight-bold">Revenue(Last 7 days)</p>
+                <label class="switch">
+                    <input id="checkbox"  type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div >
+
+                <div class="charts-card">
+                    <div id="bar-chart"></div>
+                </div>
+
+            </div>
+            <div class="main-title">
+                <p class="font-weight-bold">Bestsellers</p>
+            </div>
+            <div class="charts">
+                <div class="order-item">
+                    <span>Product Name</span>
+                    <span>Price</span>
+                    <span>#Unit Sold</span>
+                    <span>Revenue</span>
+                </div>
+                <div id="bestseller">
+                </div>
+            </div>
+        </main>
+        <!-- End Main -->
+    </div>
+
+    <!-- Scripts -->
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>

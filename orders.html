@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Orders</title>
+
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Montserrat Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/order.css">
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+
+            <ul class="sidebar-list">
+                <img class="col" src="./Freddys_Logo.svg" alt="" height="100">
+                <li class="sidebar-list-item">
+                    <a href="index.html" style="text-decoration:none">Dashboard</a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="orders.html" style="text-decoration:none">Orders</a>
+                </li>
+                <li class="sidebar-list-item" onclick="logout()">
+                    <span class="material-icons-outlined"></span> Logout
+                </li>
+            </ul>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+            <div class="main-title">
+                    <p class="font-weight-bold">ORDERS</p>
+            </div>
+            <div class="charts">
+            <table class="tablemanager">
+                <thead>
+                    <tr>
+                        <th class="disableSort">Product Name</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="body"></tbody>
+            </div> -->
+            </table>
+            </div>
+        </main>
+        <!-- End Main -->
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/tablemanager.js"></script>
+</body>
+
+</html>

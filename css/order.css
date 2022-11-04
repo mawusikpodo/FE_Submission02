@@ -85,3 +85,25 @@ button {
     display: block;
     text-align: center;
 }
+
+.order-header {
+    display: flex;
+    margin: 2em;
+    justify-content: space-between;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em;
+}
+
+.order-main{
+    display: block;
+    margin-bottom: 2em;
+    border: 1px solid #d2d2d3;
+}
+
+.hide {
+    display: none;
+}

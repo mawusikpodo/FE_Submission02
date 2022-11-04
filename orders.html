@@ -46,24 +46,33 @@
 
         <!-- Main -->
         <main class="main-container">
-            <div class="main-title">
-                    <p class="font-weight-bold">ORDERS</p>
+            <div class="order-header">
+                <div class="main-title">
+                        <p class="font-weight-bold">ORDERS</p>
+                </div>
+                <div class="search-wrapper">
+                    <i class="fa fa-search"></i>
+                    <input type="search" id="search" data-search>
+                </div>
             </div>
-            <div class="charts">
-            <table class="tablemanager">
-                <thead>
-                    <tr>
-                        <th class="disableSort">Product Name</th>
-                        <th>Date</th>
-                        <th>Price</th>
-                        <th>Status</th>
-                        
-                    </tr>
-                </thead>
-                <tbody id="body"></tbody>
-            </div> -->
-            </table>
-            </div>
+                <div class="order">
+                    <div class="order-name">Product Name</div>
+                    <div class="order-status" >Date</div>
+                    <div class="order-status">Price</div>
+                    <div class="order-status">Status</div>
+                </div>
+                <div class="order-main" data-order-section-container></div>
+                <template data-order-template>
+                    <div class="order">
+                        <div class="order-name" data-order-name></div>
+                        <div ></div>
+                        <div ></div>
+                        <div class="order-status" data-status></div>
+                    </div>
+                </template>
+                <div id="demo">
+                    Page 1 of 3<i class="fa-solid fa-caret-right"></i>
+                </div>
         </main>
         <!-- End Main -->
 
@@ -71,8 +80,7 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/orders.js"></script>
-    <script src="js/tablemanager.js"></script>
+    <script defer src="js/orders.js"></script>
 </body>
 
 </html>

@@ -30,6 +30,24 @@ function updateToken() {
 
 updateToken();
 
+const orderDataTemplate = document.querySelector("[data-order-template]")
+const orderDataContainer = document.querySelector("[data-order-section-container]")
+const searchInput = document.querySelector("[data-search]")
+
+let orders = []
+
+searchInput.addEventListener("input", e => {
+    const value = e.target.value.toLowerCase()
+    console.log(orders)
+    orders.forEach(order => {
+        const isVisible =
+            order.name.toLowerCase().includes(value) ||
+            order.status.toLowerCase().includes(value)
+        order.element.classList.toggle("hide", !isVisible)
+    })
+})
+
+
 function loadOrders() {
     const xhttp = new XMLHttpRequest();
     xhttp.open("GET", "https://freddy.codesubmit.io/orders?page=1&q=candy");
@@ -42,30 +60,16 @@ function loadOrders() {
             if (status === 0 || (status >= 200 && status < 400)) {
 
                 console.log(objects)
-                objects.orders.forEach(order => {
-                    $("#body").append(`
-                    <tr>
-                    <td>${order.product.name}</td>
-                    <td></td>
-                    <td></td>
-                    <td>${order.status}</td>
-                    </tr>
-                    `)
-                })
+                orders = objects.orders.map(order => {
 
-                $('.tablemanager').tablemanager({
-                    firstSort: [[3, 0], [2, 0], [1, 'asc']],
-                    disable: ["last"],
-                    appendFilterby: true,
-                    debug: true,
-                    vocabulary: {
-                        voc_filter_by: 'Filter By',
-                        voc_type_here_filter: 'Search...',
-                        voc_show_rows: 'Rows Per Page'
-                    },
-                    pagination: true,
-                    showrows: [15, 25, 50, 100],
-                    disableFilterBy: [1]
+                    const section = orderDataTemplate.content.cloneNode(true).children[0]
+                    const orderName = section.querySelector("[data-order-name]")
+                    const orderStatus = section.querySelector("[data-status]")
+                    orderName.textContent = order.product.name
+                    orderStatus.textContent = order.status
+                    orderDataContainer.append(section)
+                    return { name: order.product.name, status: order.status, element: section }
+
                 });
 
             }

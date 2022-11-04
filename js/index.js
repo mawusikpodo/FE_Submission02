@@ -42,7 +42,7 @@ function loadDashboard() {
                 //console.log(objects)
                 document.getElementById("currentsales").innerText = `$${objects.dashboard.sales_over_time_week[1].total}${' '}/${' '}${objects.dashboard.sales_over_time_week[1].orders}  orders`
                 document.getElementById("lastweeksales").innerText = `$${objects.dashboard.sales_over_time_week[2].total}${' '} /${' '}${objects.dashboard.sales_over_time_week[2].orders}  orders`;
-                document.getElementById("lastmonthsales").innerHTML = `$${objects.dashboard.sales_over_time_week[3].total}${' '}/${' '}${objects.dashboard.sales_over_time_week[3].orders} orders`;
+                document.getElementById("lastmonthsales").innerText = `$${objects.dashboard.sales_over_time_week[3].total}${' '}/${' '}${objects.dashboard.sales_over_time_week[3].orders} orders`;
 
                 const bestsellers = objects.dashboard.bestsellers
 
@@ -102,17 +102,13 @@ function loadDashboard() {
                     }
                 };
 
-                let chart = true
-
-                chart && initFirstChart()
-
+                initFirstChart()
 
                 function initFirstChart() {
                     var barChartFirst = new ApexCharts(document.querySelector("#bar-chart"), barChartOptions);
                     barChartFirst.render();
-
-                    chart = !chart
                 }
+
 
 
                 var secondBarChartOptions = {
@@ -158,22 +154,24 @@ function loadDashboard() {
                 };
 
 
-                chart && initSecondChart();
-
                 function initSecondChart() {
                     var barChartSecond = new ApexCharts(document.querySelector("#bar-chart"), secondBarChartOptions);
                     barChartSecond.render();
-                    chart = !chart
+                    barChartSecond
                 }
 
+                const checkbox = document.querySelector("input[name=checkbox]");
 
-                function toggleChart() {
-                    chart ? initFirstChart() : initSecondChart()
-                }
-
-
-                document.querySelector('.switch').addEventListener('click', () => {
-                    toggleChart()
+                checkbox.addEventListener("change", (e) => {
+                    if (e.target.checked) {
+                        console.log("Checkbox is checked..");
+                        initSecondChart()
+                        document.getElementById("revenue-title").innerText = 'Revenue(Last 7 days)'
+                    } else {
+                        console.log("Checkbox is not checked..");
+                        initFirstChart()
+                        document.getElementById("revenue-title").innerText = 'Revenue(Last 12 months)'
+                    }
                 });
             }
         }
